@@ -1,0 +1,9 @@
+torch
+torchvision
+transformers==4.42.3
+uvicorn
+fastapi
+ultralytics
+opencv-python
+numpy
+python-multipart

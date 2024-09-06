@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Number Plate Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#model">Model</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to Vehicle Number Plate Recognition</h1>
+            <p>Explore our innovative model for recognizing vehicle number plates and detecting vehicle colors.</p>
+            <a href="#demo" class="cta-button">Try the Demo</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Our project aims to develop a robust model for recognizing vehicle number plates and detecting vehicle colors using advanced image processing and deep learning techniques.</p>
+        <div class="team">
+            <h3>Meet the Team</h3>
+            <!-- Add team member details here -->
+        </div>
+    </section>
+
+    <section id="model">
+        <h2>The Model</h2>
+        <p>Our model uses a convolutional neural network to accurately recognize characters on vehicle number plates and detect vehicle colors.</p>
+        <!-- Add more details, diagrams, etc. -->
+    </section>
+
+<section id="demo">
+    <h2>Demo</h2>
+    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file-upload">Upload a vehicle image:</label>
+        <input type="file" id="file-upload" name="image_name" accept="image/*">
+        <button type="submit">Upload and Recognize</button>
+    </form>
+    <div id="result">
+        <!-- Display results here -->
+        {% if upload %}
+        <table style="border: solid black; width: 100%">
+            <tr style="border: solid black">
+              <th>CROPPEED LICENCE PLATE IMAGE</th>
+              <th>TEXT</th>
+            </tr>
+            <tr style="border: solid black">
+              <td>
+                <img class="img-fluid" src="/static/predict/{{upload_image}}" alt="" />
+              </td>
+              <td style="background-color: #c1dce0">
+                <h1 class="display-8">{{ text }}</h1>
+              </td>
+            </tr>
+          </table>
+    {% endif %}
+    </div>
+</section>
+Z
+    
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <!-- Add gallery images and descriptions -->
+    </section>
+
+    <section id="technical-details">
+        <h2>Technical Details</h2>
+        <p>Here you can find information about the data, model architecture, training process, and performance metrics.</p>
+        <!-- Add technical details -->
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <!-- Add frequently asked questions and answers -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-info">
+            <!-- Add contact information and social media links -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Vehicle Number Plate Recognition. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function() {
+            location.hash = 'demo';
+        });
+    </script>
+    
+</body>
+</html>
